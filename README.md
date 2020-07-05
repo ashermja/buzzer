@@ -1,4 +1,4 @@
-##Millionaire Fastest Finger First
+## Millionaire Fastest Finger First
 
 
 A who wants to be a millionaire style fastest finger quiz game, similar to a jackbox game. Perfect for playing over zoom, any video conferencing software, works just as well locally. Uses websockets to sent messages.
