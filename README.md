@@ -1,7 +1,9 @@
-#Millionaire Fastest Finger First
+##Millionaire Fastest Finger First
 
 
-A who wants to be a millionaire style fastest finger quiz game, simular to a jackbox game. Perfect for playing over zoom, any video conferencing software, works just as well locally. Uses websockets to sent messages.
+A who wants to be a millionaire style fastest finger quiz game, similar to a jackbox game. Perfect for playing over zoom, any video conferencing software, works just as well locally. Uses websockets to sent messages.
+
+This code is based on [buzzer](https://github.com/bufferapp/buzzer) which is a great app for hosting a buzz in style quiz, using your phone as a buzzer, please check in out.
 
 ## Running the app
 
