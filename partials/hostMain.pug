@@ -1,0 +1,14 @@
+div.main.body-container(class=screen === screens.main || screen === screens.end ? "" : "hidden")
+  h4.js-currentState=`Current step: ${currentState.current}`
+    h4.js-currentQuestion=`${currentQuestion}`
+    h2.js-active=`${players.length} joined`
+    ol.js-results
+      each result in results
+        li=`${result.player.name} - correct: ${result.correct} - time: ${result.time}` 
+    button.button.ribbon-outset.border.js-clear
+      p='Clear Results'
+    //- button.button.ribbon-outset.border.js-previous='Previous'
+    button.button.ribbon-outset.border.js-next
+      p=`Show ${currentState.next}`
+    button.button.ribbon-outset.border.js-reset
+      p='Reset game'

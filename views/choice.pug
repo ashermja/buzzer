@@ -5,17 +5,20 @@ html
     meta(name='viewport' content='width=device-width, initial-scale=1')
     link(rel="stylesheet" href='/styles/style.css')
     link(rel="stylesheet" href='/styles/mobile.css')
-    link(href='https://fonts.googleapis.com/css2?family=Nobile&display=swap' rel='stylesheet')
   body.mobile-body
+    
+
     div.container
       header
-        h2=("Host mode")
+        h2=("Choose mode")
         hr.solid
         img.millionaire-host-logo(src="/assets/images/millionaire-logo.png" alt="millionaire")
-      
-      include ../partials/hostSetup
-      include ../partials/hostJoin
-      include ../partials/hostMain
 
-    script(src='/socket.io/socket.io.js')
-    script(src='/host.js' type='module')
+      button.button.ribbon-outset.border.js-audience-mode
+        p='TV mode'
+      button.button.ribbon-outset.border.js-player
+        p='Join'
+      button.button.ribbon-outset.border.js-host
+        p='Host'
+
+  script(src='/choice.js' type='module')

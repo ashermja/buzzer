@@ -1,0 +1,6 @@
+div.join.body-container(class=screen === screens.join ? "" : "hidden")
+  h3.js-join-players-status(data-players=players.length)=players.length === 0 ? "Waiting for players..." : `${players.length} Joined`
+  button.button.ribbon-outset.border.js-startGame
+    p='Start game'
+  button.button.ribbon-outset.border.js-reset
+    p='Restart game'

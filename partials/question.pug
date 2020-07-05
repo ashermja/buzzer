@@ -1,0 +1,14 @@
+div.question.container(class=screen === screens.question ? "" : "hidden")
+  div.question-box.border
+    p.question=`${currentQuestion}`
+  div.options(class=showOptions === true ? "" : "hidden")
+    div.options-row
+      div.option-box.border
+        p.option=`${options[0]}`
+      div.option-box.border
+        p.option=`${options[1]}`
+    div.options-row
+      div.option-box.border
+        p.option=`${options[2]}`
+      div.option-box.border
+        p.option=`${options[3]}`

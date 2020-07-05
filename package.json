@@ -1,16 +1,26 @@
 {
-  "name": "buzzer",
-  "version": "1.2.0",
-  "description": "",
+  "name": "millionaire",
+  "version": "1.0.0",
+  "description": "Millionaire fastest finger first",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
-  "author": "Dan Farrelly <daniel.j.farrelly@gmail.com> (http://danfarrelly.nyc)",
+  "author": "Marc Asher (ashermja), Dan Farrelly <daniel.j.farrelly@gmail.com> (http://danfarrelly.nyc)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ashermja/millionaire.git"
+  },
   "dependencies": {
-    "express": "4.14.1",
+    "csvtojson": "^2.0.10",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.15",
     "pug": "2.0.0-beta11",
+    "request": "^2.88.2",
     "socketio": "1.0.0"
   }
 }

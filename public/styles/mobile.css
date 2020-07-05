@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+input,
+button {
+  font-size: 1em;
+}
+
+p {
+  margin: 2em 0;
+}
+
+ol {
+  text-align: left;
+}
+
+li {
+  margin: 0.5em 0;
+}
+
+.hidden {
+  display: none;
+}
+
+header {
+}
+
+.millionaire-host-logo {
+  position: absolute;
+  top: 10px;
+  width: 54px;
+  height: 50px;
+  margin-left: 340px;
+}
+
+.logo {
+  width: 100%;
+  max-width: 310px;
+  max-height: 120px;
+  padding: 1em 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.view button:last-child {
+  margin-bottom: 0;
+}
+
+.mobile-body {
+  background-color: rgb(16, 21, 78);
+  font-family: sans-serif;
+}
+
+.player-info,
+.player-question {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.buzzer-mode {
+  background-color: rgb(16, 21, 78);
+  color: white;
+}
+
+input[type="text"],
+input[type="number"]{
+  display: block;
+  padding: 0.8em 1.4em;
+  margin: 1em 0;
+  width: 100%;
+  border-radius: 5px;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"] {
+  border: 1px solid #B8B8B8;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="text"]:active,
+input[type="number"]:active {
+  border-color: #2c4bff;
+  box-shadow: 0 0 0 3px #ABB7FF;
+  outline: none;
+}
+
+.main-image {
+  width: 100%;
+}
+
+
+.button > p {
+  font-size: large !important;
+}
+
+.host-param {
+  margin: 30px;
+  display: flex;
+  justify-content: space-between;
+  font-size: x-large;
+}
+
+label {
+  font-size: x-large;
+}
+
+select {
+  font-size: x-large;
+}

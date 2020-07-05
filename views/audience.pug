@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title=title
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel="stylesheet" href='/styles/style.css')
+    link(rel="stylesheet" href='/styles/audience.css')
+    link(href='https://fonts.googleapis.com/css2?family=Oswald&display=swap' rel='stylesheet')
+    
+  body
+    include ../partials/audio
+    include ../partials/initial
+    include ../partials/join
+    include ../partials/start
+    include ../partials/question
+    include ../partials/answer
+    include ../partials/results
+    include ../partials/scoreboard
+    include ../partials/end
+    
+    script(src='/socket.io/socket.io.js')
+    script(src='/audience.js' type='module')
+
+    

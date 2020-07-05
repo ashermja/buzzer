@@ -1,0 +1,12 @@
+div.join.container(class=screen === screens.join ? "" : "hidden")
+  div.join-layout
+    div.join-left-container
+      img.millionaire-logo(src="/assets/images/millionaire-logo.png" alt="Image Title")
+    div.join-right-container.js-join-container(data-players=playerCount)
+      -var index = 1
+      each player in players
+        div.player-join
+          span.player-index=`${index++}`
+          span.player-name=`${player.name}`
+      
+  

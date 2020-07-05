@@ -1,0 +1,7 @@
+div.results.container(class=screen === screens.results ? "" : "hidden")
+  div.filter-container
+  div.js-results.results-list
+    each result in results
+      div.centre-line.result-container
+        div.option-box.border(class=result.correct ? "option-correct" : "")
+          p.option=`${result.player.name} - time: ${result.time}` 

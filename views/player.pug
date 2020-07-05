@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    title=title
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(href='https://fonts.googleapis.com/css2?family=Nobile&display=swap' rel='stylesheet')
+    link(rel="stylesheet" href='/styles/style.css')
+    link(rel="stylesheet" href='/styles/mobile.css')
+  body.js-body.mobile-body
+
+    div.container
+      form.view.js-join
+        img(src="/assets/images/millionaire-logo.png" class="millionaire")
+        h2="Let's play!"
+        input(type='text' name='name' placeholder='Your name' required='required')
+        //- input(type='number' name='team' placeholder='Your team number' required='required')
+        button.button.ribbon-outset.border(type='submit')
+          p='Join!'
+
+      div.view.js-joined.hidden
+        p.js-joined-info.player-info=""
+        hr.solid
+        img.millionaire-host-logo(src="/assets/images/millionaire-logo.png" alt="millionaire")
+        p.js-joined-question.player-question=""
+        div.result-container
+          button.js-button.button.ribbon-outset.border.player-button(disabled="disabled" data-key=options && options.length > 0 ? options[0].key : '')
+            p='A'
+        div.result-container
+          button.js-button.button.ribbon-outset.border.player-button(disabled="disabled" data-key=options && options.length > 1 ? options[1].key : '')
+            p='B'
+        div.result-container
+          button.js-button.button.ribbon-outset.border.player-button(disabled="disabled" data-key=options && options.length > 2 ? options[2].key : '')
+            p='C'
+        div.result-container
+          button.js-button.button.ribbon-outset.border.player-button(disabled="disabled" data-key=options && options.length > 3 ? options[3].key : '')
+            p='D'
+
+    script(src='/socket.io/socket.io.js')
+    script(src='/player.js' type='module')

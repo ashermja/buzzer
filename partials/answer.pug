@@ -1,0 +1,18 @@
+div.answer.container(class=screen === screens.answer ? "" : "hidden")
+  div.answer-left-container
+  div.answer-right-container
+    div
+      p.questionAnswer=`${currentQuestion}`
+    div.answer-containers
+      div.js-answer.centre-line(class=answers.length > 0 ? "" : "hiddenWithSpace")
+        div.answer-container.option-box.border
+          p.option=`${answers.length > 0 ? answers[0] : ''}`
+      div.js-answer.centre-line(class=answers.length > 1 ? "" : "hiddenWithSpace")
+        div.answer-container.option-box.border
+          p.option=`${answers.length > 1 ? answers[1] : ''}`
+      div.js-answer.centre-line(class=answers.length > 2 ? "" : "hiddenWithSpace")
+        div.answer-container.option-box.border
+          p.option=`${answers.length > 2 ? answers[2] : ''}`
+      div.js-answer.centre-line(class=answers.length > 3 ? "" : "hiddenWithSpace")
+        div.answer-container.option-box.border
+          p.option=`${answers.length > 3 ? answers[3] : ''}`

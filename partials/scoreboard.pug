@@ -1,0 +1,8 @@
+div.scoreboard.container(class=screen === screens.scoreboard ? "" : "hidden")
+  div.filter-container
+  h1="Final Scores"
+  div.js-scoreboard.results-list
+    each score in scores
+      div.centre-line.result-container
+        div.option-box.border
+          p.option=`${score.name} - score: ${score.score}` 

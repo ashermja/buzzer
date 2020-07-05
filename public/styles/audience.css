@@ -1,0 +1,242 @@
+html {
+  height: 100%;
+}
+
+
+.initial,
+.join,
+.start,
+div.question {
+  background: 
+    /* top, transparent red */ 
+    radial-gradient(
+      rgba(0, 0, 0, 0.55), 
+      rgba(0, 0, 0, 0)
+    ),
+    /* bottom, image */
+    url(../assets/images/millionaire-background.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    justify-content: space-between;
+}
+
+.join {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.join-layout {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+div.join-left-container {
+  display: flex;
+  flex: 4;
+  justify-content: center;
+  flex-direction: column;
+}
+
+div.join-right-container {
+  border-left: 4px solid #4597a0;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  padding-left: 60px;
+  padding-right: 60px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.initial-options {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+img.millionaire-logo {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.answer {
+  background-color: #1c1f63;
+  display: flex;
+}
+
+div.answer-left-container {
+  flex: 3;
+  background: 
+    /* top, transparent red */ 
+    radial-gradient(
+      rgba(0, 0, 0, 0.35), 
+      #00000000
+    ),
+    /* bottom, image */
+    url(../assets/images/host.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+div.answer-right-container {
+  border-left: 4px solid #4597a0;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  background: 
+    /* top, transparent red */ 
+    radial-gradient(
+      rgba(0, 0, 0, 0.65), 
+      #00000000
+    ),
+    /* bottom, image */
+    url(../assets/images/spiral.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+}
+
+.questionAnswer {
+  padding: 60px;
+}
+
+div.answer-containers {
+  margin-bottom: 60px;
+}
+
+div.answer-container {
+  left: 500px;
+}
+
+.answer-visible {
+  transition: 0.6s;
+  left: -60px !important;
+}
+
+.scoreboard,
+.results,
+.end {
+  background: url(../assets/images/spiral.png);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: -1;
+}
+
+.filter-container {
+  z-index: -1;
+  animation: pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from   {     
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,10,30,1) 0%,rgba(255,255,255,0) 100%);
+    opacity:0.7;
+  }
+  to {     
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,10,30,1) 0%,rgba(255,255,255,0) 100%);
+    opacity:0; 
+  }
+}
+
+.results-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  flex-direction: column;
+}
+
+.result-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.end {
+  background-color: black;
+}
+
+.filter-container,
+.container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+div.player-join {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+span.player-index {
+  width: 60px;
+  text-transform: uppercase;
+}
+
+span.player-name {
+  width: 100%;
+  text-transform: uppercase;
+}
+
+div.player-join {
+  font-size: xx-large;
+  color: #E99E45;
+}
+
+/* div.player-join > span > span {
+  width: 100%;
+} */
+
+div.scoreboard > h1 {
+  text-align: center;
+  margin-top: 60px;
+}
+
+div.credits {
+  margin-top: 800px;
+  animation: 25s credits linear;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes credits {
+  0% {
+    margin-top: 800px;
+  }
+  100% {
+    margin-top: -800px;
+  }
+}

@@ -1,0 +1,15 @@
+div.initial.body-container(class=screen === screens.initial ? "" : "hidden")  
+  div.host-param
+    <label for="category">Category:</label>
+    select#category(name='category')
+      each category in categories
+        option(value=`${category}`)=`${category}`
+  div.host-param
+    <label for="noQuestions">Number of questions:</label>
+    select#noQuestions(name='noQuestions')
+      option(value=5) 5
+      option(value=10) 10
+      option(value=10) 15
+
+  button.button.ribbon-outset.border.js-hostGame
+    p='Host game'
