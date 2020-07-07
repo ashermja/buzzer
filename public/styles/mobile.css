@@ -35,6 +35,12 @@ header {
   margin-left: 340px;
 }
 
+.millionaire {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
 .logo {
   width: 100%;
   max-width: 310px;
