@@ -1,12 +1,14 @@
 const initialViewState = {
   questionText: '',
   showOptions: false,
+  noOfAnswers: 0,
   options: [],
   answered:[],
 };
 
 export const showQuestion = (data, currentQuestion) => {
   viewState.questionText = data.questions[currentQuestion].question;
+  viewState.noOfAnswers = data.questions[currentQuestion].answers.length,
   viewState.answered = [];
 }
 

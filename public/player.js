@@ -69,11 +69,16 @@ socket.on(hostActions.resetGame, () => {
 
 const emitAnswer = (button) => {
   const option = button.getAttribute('data-key');
+  const noOfAnswers = parseInt(question.getAttribute('data-noOfAnswers'));
   if (!answerArray.includes(option)){
     button.disabled = true;
     answerArray.push(option);
     console.log(option, answerArray);
-    if (answerArray.length === 4) {
+    if (answerArray.length === noOfAnswers) {
+      buttons.forEach((b) => {
+        b.disabled = true;
+        b.firstChild.innerText = '-';
+      });      
       // Stop timer
       console.log('buzz');
       socket.emit(playerActions.buzz, { user, answerArray});
@@ -110,8 +115,8 @@ form.addEventListener('submit', (e) => {
 
 
 socket.on(hostActions.updatePlayerView, (viewState) => {
-  const { questionText, showOptions, options, answered } = viewState;
-
+  const { questionText, showOptions, options, answered, noOfAnswers } = viewState;
+  question.setAttribute('data-noOfAnswers', noOfAnswers);
   question.innerText = questionText;
   if (showOptions && !hasAnswered(answered)) {
     showButtonOptions(options, false);
