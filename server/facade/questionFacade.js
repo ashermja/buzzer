@@ -37,8 +37,8 @@ async function updateQuestions(req) {
     { 
       question: question.Question,
       options: [question.OptionA, question.OptionB, question.OptionC, question.OptionD],
-      answers: [question.Answer1, question.Answer2, question.Answer3, question.Answer4],
-      categories: [question.Category1, question.Category2, question.Category3],
+      answers: [question.Answer1, question.Answer2, question.Answer3, question.Answer4].filter(Boolean),
+      categories: [question.Category1, question.Category2, question.Category3].filter(Boolean),
     }) )
   questions.forEach(question => {
     questionModel.create(question);
