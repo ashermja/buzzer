@@ -25,6 +25,10 @@ export const showJoin = () => {
   showContainer(hostScreens.join);
 }
 
+export const showInitial = () => {
+  showContainer(hostScreens.initial);
+}
+
 export const showMain = () => {
   showContainer(hostScreens.main);
 }
@@ -59,6 +63,7 @@ setIntitalState();
 
 export default {
   setState,
+  showInitial,
   showMain,
   showJoin,
   showQuestion,
