@@ -12,6 +12,7 @@ export const states =  {
   results: 'RESULTS',
   scoreboard: 'SCOREBOARD',
   end: 'END',
+  playerAgain: 'PLAY_AGAIN',
 };
 
 export const screens = {

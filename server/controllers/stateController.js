@@ -14,7 +14,7 @@ const initialData = () => {
         question: '',
         options: [],
         answers: [],
-        results: [] // player: '', time: 0,correct: false,
+        results: [] // player: '', time: 0,correct: false, categories
       }
     ],
   }
@@ -35,11 +35,17 @@ const getData = async (numberOfQs, category) => {
 
 
 export const setData = (questions) => {
-  // if (data.questions.length === 1){
-    data = {...data, questions: questions.map((question, i) => {
+    const newQuestions = questions.map((question, i) => {
       return {...question, results: []}
-    })}
-  // }
+    });
+    if (data.questions.length === 1){
+      data.questions.pop();
+    }
+    // add new questions to array
+    data.questions.push(...newQuestions);
+    // data = {...data, questions: questions.map((question, i) => {
+    //   return {...question, results: []}
+    // })}
 }
 
 export const setPlayers = (io, player) => {
@@ -62,7 +68,8 @@ export const addResult = (io, result) => {
   const correct = JSON.stringify(correctAnswers) == JSON.stringify(userAnswers);
   const time = Math.round((new Date - timer) / 10) / 100;
   const exists = data.questions[currentQuestion].results.findIndex((r) => r.player.id === result.user.id);
-  exists === -1 && data.questions[currentQuestion].results.push({ player: result.user, time, correct });
+  const categories = data.questions[currentQuestion].categories;
+  exists === -1 && data.questions[currentQuestion].results.push({ player: result.user, time, correct, categories });
   hostViewModel.setResults(data.questions[currentQuestion].results);
   playerViewModel.answered(result.user.id);
   io.emit(hostActions.updateHostView, hostViewModel.getViewState());
@@ -72,9 +79,7 @@ export const resetGame = (io) => {
   state = states.initial;
   currentQuestion = 0;
   data.players = [];
-  data.questions.forEach(question => {
-    question.results = [];
-  });
+  data.questions = initialData().questions;
   state = emitState(state, io);
   
   io.emit(hostActions.resetGame, []);
@@ -134,27 +139,26 @@ const emitState = (state, data, meta, io) => {
       playerViewModel.disableOptions();
       audienceViewModel.showAnswerQuestion();
       io.emit(hostActions.updatePlayerView, playerViewModel.getViewState());
-      // io.emit(hostActions.showAnswerQuestion, data.questions[currentQuestion]);
       break;
     case states.answer1:
     case states.answer2:
     case states.answer3:
     case states.answer4:
       audienceViewModel.showAnswer(data, currentQuestion);
-      // io.emit(hostActions.showAnswer1, data.questions[currentQuestion].answers);
       break;
     case states.results:
       audienceViewModel.showResults(data, currentQuestion);
-      // io.emit(hostActions.showResults);
       currentQuestion += 1;
       break;
     case states.scoreboard:
       audienceViewModel.showScoreboard(data);
-      // io.emit(hostActions.showScoreboard);
       break;
     case states.end:
       audienceViewModel.showEnd();
-      // io.emit(hostActions.showEnd);
+      break;
+    case states.playerAgain:
+      state = states.initial;
+      hostViewModel.showInitial();
       break;
   }
   hostViewModel.setState(state, getNextState(state, data.questions));
